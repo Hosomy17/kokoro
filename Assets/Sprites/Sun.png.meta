@@ -1,0 +1,94 @@
+fileFormatVersion: 2
+guid: b3c1b5dc206ffdc458a3bec07aca8665
+timeCreated: 1456088496
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Sun_0
+    21300002: Sun_1
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Sun_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.3447584, y: 0.52616423}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.032269, y: 14.1627445}
+        - {x: -11.032269, y: 12.1627445}
+        - {x: -11.032269, y: -8.8372555}
+        - {x: -8.032269, y: -11.8372555}
+        - {x: 9.967731, y: -11.8372555}
+        - {x: 10.967731, y: -10.8372555}
+        - {x: 10.967731, y: 9.1627445}
+        - {x: 8.967731, y: 14.1627445}
+    - name: Sun_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5593058, y: 0.5313971}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.897785, y: 10.995293}
+        - {x: -11.897785, y: 9.995293}
+        - {x: -11.897785, y: -12.004707}
+        - {x: 11.102215, y: -12.004707}
+        - {x: 11.102215, y: 10.995293}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
