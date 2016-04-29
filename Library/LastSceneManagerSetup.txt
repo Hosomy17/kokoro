@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Lies.unity
+- path: Assets/Scenes/Choises.unity
   isLoaded: 1
   isActive: 1

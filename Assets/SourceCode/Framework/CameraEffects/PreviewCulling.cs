@@ -69,8 +69,8 @@ public class PreviewCulling : MonoBehaviour {
                 Camera.current.projectionMatrix = sceneReferenceCamera.projectionMatrix;
                 Camera.current.transform.position = sceneReferenceCamera.transform.position;
                 Camera.current.transform.rotation = sceneReferenceCamera.transform.rotation;
-                Camera.current.near = sceneReferenceCamera.near;
-                Camera.current.far = sceneReferenceCamera.far;
+                Camera.current.nearClipPlane = sceneReferenceCamera.nearClipPlane;
+                Camera.current.farClipPlane = sceneReferenceCamera.farClipPlane;
             }
         }
     }
