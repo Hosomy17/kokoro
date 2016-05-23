@@ -20,7 +20,7 @@ public class ScriptLies : ScriptGeneric
         directionArrows = "Down";
 
         InvokeRepeating("Squash", 0, 1);
-        Invoke("NextScene", 27f);
+        Invoke("NextScene", 26f);
     }
 
     void Update()
@@ -46,11 +46,11 @@ public class ScriptLies : ScriptGeneric
 
         Vector3 position;
         position = blockUp.transform.localPosition;
-        position.y -= 1.5f;
+        position.y -= 1.8f;
         blockUp.transform.localPosition = position;
 
         position = blockDown.transform.localPosition;
-        position.y += 1.5f;
+        position.y += 1.8f;
         blockDown.transform.localPosition = position;
     }
 
@@ -62,7 +62,7 @@ public class ScriptLies : ScriptGeneric
 
     private void MoveArrows(float velocity)
     {
-        velocity *= Random.Range(80f,100f);
+        velocity *= Random.Range(90f,110f);
         BehaviourPhysics.Move(arrows, Vector2.up,velocity);
     }
 
@@ -120,6 +120,6 @@ public class ScriptLies : ScriptGeneric
 
     public void NextScene()
     {
-        SceneManager.LoadScene("Opulence");
+        SceneManager.LoadScene("Moments - Tutorial");
     }
 }

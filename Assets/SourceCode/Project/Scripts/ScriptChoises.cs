@@ -36,7 +36,7 @@ public class ScriptChoises : ScriptGeneric
         Invoke("SpawnSaw", 43.75f);
         Invoke("SpawnSaw", 44f);
 
-        Invoke("NextScene", 70.2f);
+        Invoke("NextScene", 70f);
 
         DontDestroyOnLoad(sound);
     }
@@ -90,6 +90,6 @@ public class ScriptChoises : ScriptGeneric
 
     public void NextScene()
     {
-        SceneManager.LoadScene("Lies");
+        SceneManager.LoadScene("Lies - Tutorial");
     }
 }
