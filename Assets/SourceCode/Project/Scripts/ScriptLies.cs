@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine.UI;
 
 public class ScriptLies : ScriptGeneric
 {
@@ -56,13 +57,13 @@ public class ScriptLies : ScriptGeneric
 
     private void MoveBlocks(float velocity)
     {
-        velocity *= Random.Range(20f, 30f);
+        velocity *= Random.Range(30f, 40f);
         BehaviourPhysics.Move(blocks, Vector2.up, velocity);
     }
 
     private void MoveArrows(float velocity)
     {
-        velocity *= Random.Range(90f,110f);
+        velocity *= Random.Range(100f,120f);
         BehaviourPhysics.Move(arrows, Vector2.up,velocity);
     }
 

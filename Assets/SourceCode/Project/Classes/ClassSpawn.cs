@@ -11,8 +11,8 @@ public class ClassSpawn : ClassGeneric
 
     private void Spawn()
     {
-        GameObject obj = GameObject.Instantiate(spawned);
-        obj.transform.position = transform.position;
+        GameObject obj = spawned.Spawn(transform.position);
+        obj.name = "Saw";
         Destroy(gameObject);
     }
 }

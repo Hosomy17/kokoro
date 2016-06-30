@@ -9,10 +9,15 @@ public class ScriptChoises : ScriptGeneric
     public GameObject sun;
     public GameObject sound;
 
+    private bool endChapter;
+
+    private AudioSource music;
+
     public int toltalPoints = 0;
 
     void Start()
     {
+        endChapter = true;
         GetComponent<Gamepad>().controller = new ControllerKokoro();
         GameObject obj = Resources.Load("Numbers/Numbers_"+toltalPoints) as GameObject;
         obj = GameObject.Instantiate(obj);
@@ -36,9 +41,17 @@ public class ScriptChoises : ScriptGeneric
         Invoke("SpawnSaw", 43.75f);
         Invoke("SpawnSaw", 44f);
 
-        Invoke("NextScene", 70f);
+        //Invoke("NextScene", 70f);
 
         DontDestroyOnLoad(sound);
+
+        music = sound.GetComponent<AudioSource>();
+    }
+
+    void Update()
+    {
+        if (endChapter && music.time >= 70)
+            NextScene();
     }
 
     public void LosePoint()
@@ -82,7 +95,7 @@ public class ScriptChoises : ScriptGeneric
         float y = Random.Range(-150f, 150f);
         Vector2 pos = new Vector2(x, y);
 
-        GameObject obj = GameObject.Instantiate(sun, pos, Quaternion.identity) as GameObject;
+        GameObject obj = sun.Spawn(pos);
         obj.name = "Sun";
 
         Invoke("SpawnSun", 3f);
@@ -90,6 +103,13 @@ public class ScriptChoises : ScriptGeneric
 
     public void NextScene()
     {
-        SceneManager.LoadScene("Lies - Tutorial");
+        endChapter = false;
+        if (true)
+            SceneManager.LoadScene("Lies - Tutorial");
+        else
+        {
+            Destroy(sound);
+            SceneManager.LoadScene("Choises - Tutorial");
+        }
     }
 }

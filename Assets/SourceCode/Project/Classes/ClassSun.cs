@@ -7,13 +7,22 @@ public class ClassSun : ClassGeneric
 
     void Start()
     {
-        Invoke("Kill", 9f);
         sfx = Resources.Load("Sounds\\SFX\\Coin") as AudioClip;
     }
 
-     public void Kill()
+    public void Kill()
     {
         BehaviourSound.Play(gameObject, sfx);
-        Destroy(gameObject);
+        gameObject.Recycle();
+    }
+
+    void OnEnable()
+    {
+        Invoke("Kill", 9f);
+    }
+
+    void OnDisable()
+    {
+        CancelInvoke("Kill");
     }
 }
