@@ -9,9 +9,17 @@ public class ScriptRegrets : MonoBehaviour
     public GameObject sun;
 
     public int toltalPoints = 0;
+    private bool endChapter;
+
+    private GameObject sound;
+    private AudioSource music;
 
     void Start()
     {
+        endChapter = true;
+        sound = GameObject.Find("Kokoro Music");
+        music = sound.GetComponent<AudioSource>();
+
         GetComponent<Gamepad>().controller = new ControllerKokoro();
         GameObject obj = Resources.Load("Numbers/Numbers_" + toltalPoints) as GameObject;
         obj = GameObject.Instantiate(obj);
@@ -35,13 +43,14 @@ public class ScriptRegrets : MonoBehaviour
         Invoke("SpawnSaw", 5.75f);
         Invoke("SpawnSaw", 6f);
 
-        Invoke("NextScene", 25f);
+        //Invoke("NextScene", 30f);
 
     }
 
     void Update()
     {
-
+        if (endChapter && music.time >= 166)
+            NextScene();
     }
 
     public void GivePoint()
@@ -95,6 +104,13 @@ public class ScriptRegrets : MonoBehaviour
 
     public void NextScene()
     {
-        SceneManager.LoadScene("Obesessions - Tutorial");
+        endChapter = false;
+        if (true)
+            SceneManager.LoadScene("Obesessions - Tutorial");
+        else
+        {
+            Destroy(sound);
+            SceneManager.LoadScene("Choises - Tutorial");
+        }
     }
 }

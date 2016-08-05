@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
-using UnityStandardAssets.ImageEffects;
+using UnityEngine.SceneManagement;
 
-public class ScriptMoments : ScriptGeneric
+public class ScriptMemories : ScriptGeneric
 {
     public GameObject maze;
     public float velocity;
@@ -11,29 +10,29 @@ public class ScriptMoments : ScriptGeneric
 
     private GameObject sound;
     private AudioSource music;
-	void Start ()
+    void Start()
     {
         endChapter = true;
         sound = GameObject.Find("Kokoro Music");
         music = sound.GetComponent<AudioSource>();
 
         GetComponent<Gamepad>().controller = new ControllerKokoro();
-        maze.GetComponent<Rigidbody2D>().velocity = Vector2.up * velocity;
+        maze.GetComponent<Rigidbody2D>().velocity = Vector2.down * velocity;
 
-        Invoke("Hurry", 12f);
+        Invoke("Hurry", 5f);
 
-        //Invoke("NextScene", 30f);
+        Invoke("NextScene", 30f);
     }
 
     void Update()
     {
-        if (endChapter && music.time >= 133)
+        if (endChapter && music.time >= 199)
             NextScene();
     }
 
     private void Hurry()
     {
-        maze.GetComponent<Rigidbody2D>().velocity = Vector2.up * (velocity * 1.25f);
+        maze.GetComponent<Rigidbody2D>().velocity = Vector2.down * (velocity * 1.25f);
     }
 
     public void NextScene()

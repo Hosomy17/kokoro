@@ -30,8 +30,11 @@ public class ClassKokoro : ClassGeneric
     {
         if(c.gameObject.name == "Blocks")
         {
-            
             hp.fillAmount -= 0.03f;
+        }
+        if(c.gameObject.name == "FakeBlocks")
+        {
+            hp.fillAmount += 0.005f;
         }
     }
 }

@@ -8,6 +8,7 @@ public class ScriptChoises : ScriptGeneric
     public GameObject effectSpawn;
     public GameObject sun;
     public GameObject sound;
+    public AutoZoom autoZoom;
 
     private bool endChapter;
 
@@ -29,6 +30,7 @@ public class ScriptChoises : ScriptGeneric
         Invoke("SpawnSun", 3f);
         Invoke("SpawnSun", 10f);
 
+        Invoke("Zoom", 40.5f);
         Invoke("SpawnSaw", 40f);
         Invoke("SpawnSaw", 40.25f);
         Invoke("SpawnSaw", 40.5f);
@@ -54,21 +56,31 @@ public class ScriptChoises : ScriptGeneric
             NextScene();
     }
 
+    public void Zoom()
+    {
+        autoZoom.limit = 50;
+        autoZoom.velocity = 10;
+    }
+
     public void LosePoint()
     {
-        toltalPoints = 0;
-        GameObject obj = Resources.Load("Numbers/Numbers_" + toltalPoints) as GameObject;
-        obj = GameObject.Instantiate(obj);
-        obj.transform.position = points.transform.position;
-        Destroy(points);
-        points = obj;
+        toltalPoints -= 3;
+
+        if (toltalPoints < 0)
+            toltalPoints = 0;
+
+            GameObject obj = Resources.Load("Numbers/Numbers_" + toltalPoints) as GameObject;
+            obj = GameObject.Instantiate(obj);
+            obj.transform.position = points.transform.position;
+            Destroy(points);
+            points = obj;
 
     }
 
     public void GivePoint()
     {
         toltalPoints++;
-        if(toltalPoints <= 10)
+        if (toltalPoints <= 10)
         {
             GameObject obj = Resources.Load("Numbers/Numbers_" + toltalPoints) as GameObject;
             obj = GameObject.Instantiate(obj);
@@ -76,6 +88,8 @@ public class ScriptChoises : ScriptGeneric
             Destroy(points);
             points = obj;
         }
+        else
+            toltalPoints = 10;
     }
 
     public void SpawnSaw()
