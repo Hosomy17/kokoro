@@ -29,9 +29,6 @@ public class ScriptObeesessions : ScriptGeneric
         directionArrows = "Down";
 
         InvokeRepeating("Squash", 0, 1);
-        //Invoke("NextScene", 26f);
-
-        
     }
 
     void Update()

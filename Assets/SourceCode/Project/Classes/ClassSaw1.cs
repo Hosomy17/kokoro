@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ClassSaw1 : MonoBehaviour
+public class ClassSaw1 : ClassGeneric
 {
     public float speed;
     public GameObject effectDestroy;

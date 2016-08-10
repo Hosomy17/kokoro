@@ -21,13 +21,11 @@ public class ScriptMoments : ScriptGeneric
         maze.GetComponent<Rigidbody2D>().velocity = Vector2.up * velocity;
 
         Invoke("Hurry", 12f);
-
-        //Invoke("NextScene", 30f);
     }
 
     void Update()
     {
-        if (endChapter && music.time >= 133)
+        if (endChapter && music.time >= 130)
             NextScene();
     }
 

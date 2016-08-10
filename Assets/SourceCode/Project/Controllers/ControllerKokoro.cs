@@ -10,8 +10,6 @@ public class ControllerKokoro : ControllerGeneric
         this.classKokoro = GameObject.Find("Kokoro").GetComponent<ClassKokoro>();
     }
 
-
-
     public override void SendInput(Dictionary<string, object> input)
     {
         string name =(string) input["Name"];

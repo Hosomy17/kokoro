@@ -19,20 +19,18 @@ public class ScriptMemories : ScriptGeneric
         GetComponent<Gamepad>().controller = new ControllerKokoro();
         maze.GetComponent<Rigidbody2D>().velocity = Vector2.down * velocity;
 
-        Invoke("Hurry", 5f);
-
-        Invoke("NextScene", 30f);
+        Invoke("Hurry", 3f);
     }
 
     void Update()
     {
-        if (endChapter && music.time >= 199)
+        if (endChapter && music.time >= 194)
             NextScene();
     }
 
     private void Hurry()
     {
-        maze.GetComponent<Rigidbody2D>().velocity = Vector2.down * (velocity * 1.25f);
+        maze.GetComponent<Rigidbody2D>().velocity = Vector2.down * (velocity * 1.4f);
     }
 
     public void NextScene()

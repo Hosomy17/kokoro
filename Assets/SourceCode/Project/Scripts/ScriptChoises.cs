@@ -43,8 +43,6 @@ public class ScriptChoises : ScriptGeneric
         Invoke("SpawnSaw", 43.75f);
         Invoke("SpawnSaw", 44f);
 
-        //Invoke("NextScene", 70f);
-
         DontDestroyOnLoad(sound);
 
         music = sound.GetComponent<AudioSource>();

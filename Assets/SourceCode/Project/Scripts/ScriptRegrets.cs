@@ -42,9 +42,6 @@ public class ScriptRegrets : MonoBehaviour
         Invoke("SpawnSaw", 5.5f);
         Invoke("SpawnSaw", 5.75f);
         Invoke("SpawnSaw", 6f);
-
-        //Invoke("NextScene", 30f);
-
     }
 
     void Update()
