@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ScriptObeesessions : ScriptGeneric
 {
@@ -9,6 +10,7 @@ public class ScriptObeesessions : ScriptGeneric
     private GameObject blockUp;
     private GameObject blockDown;
     private string directionArrows;
+    public Image hp;
 
     private bool endChapter;
 
@@ -132,12 +134,11 @@ public class ScriptObeesessions : ScriptGeneric
     public void NextScene()
     {
         endChapter = false;
-        if (true)
+        if (hp.fillAmount >= 1)
             SceneManager.LoadScene("Memories - Tutorial");
         else
         {
-            Destroy(sound);
-            SceneManager.LoadScene("Choises - Tutorial");
+            SceneManager.LoadScene("Game Over");
         }
     }
 }

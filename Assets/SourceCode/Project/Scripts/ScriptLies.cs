@@ -10,6 +10,7 @@ public class ScriptLies : ScriptGeneric
     private GameObject blockUp;
     private GameObject blockDown;
     private string directionArrows;
+    public Image hp;
 
     private bool endChapter;
 
@@ -24,15 +25,20 @@ public class ScriptLies : ScriptGeneric
         GetComponent<Gamepad>().controller = new ControllerKokoro();
         blockUp = GameObject.Find("Block_Up");
         blockDown = GameObject.Find("Block_Down");
-        MoveArrows(-1);
+        MoveArrows(1);
         MoveBlocks(-1);
-        directionArrows = "Down";
+        directionArrows = "Up";
 
         InvokeRepeating("Squash", 0, 1);
     }
 
     void Update()
     {
+        if(hp.fillAmount <= 0)
+        {
+            SceneManager.LoadScene("Game Over");
+        }
+
         if (blocks.transform.position.y < -100)
         {
             BehaviourPhysics.Move(blocks, Vector2.up, 0);
@@ -136,8 +142,7 @@ public class ScriptLies : ScriptGeneric
             SceneManager.LoadScene("Moments - Tutorial");
         else
         {
-            Destroy(sound);
-            SceneManager.LoadScene("Choises - Tutorial");
+            SceneManager.LoadScene("Game Over");
         }
     }
 }

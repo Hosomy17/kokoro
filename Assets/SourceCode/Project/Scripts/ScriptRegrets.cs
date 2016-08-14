@@ -102,12 +102,11 @@ public class ScriptRegrets : MonoBehaviour
     public void NextScene()
     {
         endChapter = false;
-        if (true)
+        if (toltalPoints >= 10)
             SceneManager.LoadScene("Obesessions - Tutorial");
         else
         {
-            Destroy(sound);
-            SceneManager.LoadScene("Choises - Tutorial");
+            SceneManager.LoadScene("Game Over");
         }
     }
 }

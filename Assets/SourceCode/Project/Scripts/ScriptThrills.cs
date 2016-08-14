@@ -11,8 +11,17 @@ public class ScriptThrills : ScriptGeneric
     public GameObject effectSpawn;
     public List<Vector2> positions;
 
+    private bool endChapter;
+
+    private GameObject sound;
+    private AudioSource music;
+
 	void Start ()
     {
+        endChapter = true;
+        sound = GameObject.Find("Kokoro Music");
+        music = sound.GetComponent<AudioSource>();
+
         GetComponent<Gamepad>().controller = new ControllerKeys();
         positions.Add(new Vector2(1f, 0.5f));
         positions.Add(new Vector2(0f, 0.5f));
@@ -22,13 +31,13 @@ public class ScriptThrills : ScriptGeneric
         InvokeRepeating("SpawnSaw", 0f, 1f);
         InvokeRepeating("SpawnSaw", 23.5f, 1f);
         InvokeRepeating("SpawnSaw", 33.3f, 1f);
-        Invoke("NextScene",53f);
 
     }
 	
 	void Update ()
     {
-
+        if (endChapter && music.time >= 250)
+            NextScene();
     }
 
     public void AddHp(float point)
@@ -37,7 +46,12 @@ public class ScriptThrills : ScriptGeneric
         total += point;
         if (total > 1)
             total = 1;
+        if(total < 0)
+            total = 0;
         hp.fillAmount = total;
+
+        if(hp.fillAmount <= 0)
+            SceneManager.LoadScene("Game Over");
     }
 
     public void SpawnSaw()
@@ -50,13 +64,12 @@ public class ScriptThrills : ScriptGeneric
 
     public void NextScene()
     {
-        //endChapter = false;
+        endChapter = false;
         if (true)
             SceneManager.LoadScene("End");
         else
         {
-            //Destroy(sound);
-            SceneManager.LoadScene("Choises - Tutorial");
+            SceneManager.LoadScene("Game Over");
         }
     }
 }

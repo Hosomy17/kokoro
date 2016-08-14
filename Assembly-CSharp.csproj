@@ -80,8 +80,11 @@
      <Compile Include="Assets\SourceCode\Project\Facade\FacadeKokoro.cs" />
      <Compile Include="Assets\SourceCode\Project\Player\Gamepad.cs" />
      <Compile Include="Assets\SourceCode\Project\Scripts\ScriptChoises.cs" />
+     <Compile Include="Assets\SourceCode\Project\Scripts\ScriptEnd.cs" />
+     <Compile Include="Assets\SourceCode\Project\Scripts\ScriptGameOver.cs" />
      <Compile Include="Assets\SourceCode\Project\Scripts\ScriptLies.cs" />
      <Compile Include="Assets\SourceCode\Project\Scripts\ScriptMemories.cs" />
+     <Compile Include="Assets\SourceCode\Project\Scripts\ScriptMenu.cs" />
      <Compile Include="Assets\SourceCode\Project\Scripts\ScriptMoments.cs" />
      <Compile Include="Assets\SourceCode\Project\Scripts\ScriptObeesessions.cs" />
      <Compile Include="Assets\SourceCode\Project\Scripts\ScriptRegrets.cs" />

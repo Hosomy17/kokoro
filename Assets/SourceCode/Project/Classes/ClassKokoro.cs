@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ClassKokoro : ClassGeneric
 {
@@ -23,6 +24,14 @@ public class ClassKokoro : ClassGeneric
         else if(c.gameObject.name == "Saw")
         {
             gameManager.GetComponent<ScriptChoises>().LosePoint();
+        }
+        else if(c.gameObject.name == "Dreams")
+        {
+            SceneManager.LoadScene("Happy End");
+        }
+        else if(c.gameObject.name == "Death")
+        {
+            SceneManager.LoadScene("Game Over");
         }
     }
 

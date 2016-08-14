@@ -37,7 +37,7 @@ public class ScriptMemories : ScriptGeneric
     {
         endChapter = false;
         if (true)
-            SceneManager.LoadScene("Regrets - Tutorial");
+            SceneManager.LoadScene("Thrills - Tutorial");
         else
         {
             Destroy(sound);

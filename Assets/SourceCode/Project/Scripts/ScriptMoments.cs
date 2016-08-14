@@ -41,8 +41,7 @@ public class ScriptMoments : ScriptGeneric
             SceneManager.LoadScene("Regrets - Tutorial");
         else
         {
-            Destroy(sound);
-            SceneManager.LoadScene("Choises - Tutorial");
+            SceneManager.LoadScene("Game Over");
         }
     }
 
