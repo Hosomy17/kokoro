@@ -2,6 +2,7 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class ScriptLies : ScriptGeneric
 {
@@ -36,6 +37,9 @@ public class ScriptLies : ScriptGeneric
     {
         if(hp.fillAmount <= 0)
         {
+            Dictionary<string, object> d = new Dictionary<string, object>();
+            d.Add("Check Point", "Lies - Tutorial");
+            GameManagerGeneric.Instance.SaveInfo(d);
             SceneManager.LoadScene("Game Over");
         }
 

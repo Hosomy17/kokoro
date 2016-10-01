@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ScriptChoises : ScriptGeneric
 {
     public GameObject points;
     public GameObject effectSpawn;
     public GameObject sun;
-    public GameObject sound;
+    private GameObject sound;
     public AutoZoom autoZoom;
 
     private bool endChapter;
@@ -19,6 +20,7 @@ public class ScriptChoises : ScriptGeneric
     void Start()
     {
         endChapter = true;
+        sound = GameObject.Find("Kokoro Music");
         GetComponent<Gamepad>().controller = new ControllerKokoro();
         GameObject obj = Resources.Load("Numbers/Numbers_"+toltalPoints) as GameObject;
         obj = GameObject.Instantiate(obj);
@@ -42,8 +44,6 @@ public class ScriptChoises : ScriptGeneric
         Invoke("SpawnSaw", 43.5f);
         Invoke("SpawnSaw", 43.75f);
         Invoke("SpawnSaw", 44f);
-
-        DontDestroyOnLoad(sound);
 
         music = sound.GetComponent<AudioSource>();
     }
@@ -120,6 +120,9 @@ public class ScriptChoises : ScriptGeneric
             SceneManager.LoadScene("Lies - Tutorial");
         else
         {
+            Dictionary<string, object> d = new Dictionary<string, object>();
+            d.Add("Check Point", "Choises - Tutorial");
+            GameManagerGeneric.Instance.SaveInfo(d);
             SceneManager.LoadScene("Game Over");
         }
     }

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ScriptRegrets : MonoBehaviour
 {
@@ -106,6 +107,9 @@ public class ScriptRegrets : MonoBehaviour
             SceneManager.LoadScene("Obesessions - Tutorial");
         else
         {
+            Dictionary<string, object> d = new Dictionary<string, object>();
+            d.Add("Check Point", "Regrets - Tutorial");
+            GameManagerGeneric.Instance.SaveInfo(d);
             SceneManager.LoadScene("Game Over");
         }
     }

@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class ClassKokoro : ClassGeneric
 {
@@ -29,8 +30,18 @@ public class ClassKokoro : ClassGeneric
         {
             SceneManager.LoadScene("Happy End");
         }
-        else if(c.gameObject.name == "Death")
+        else if(c.gameObject.name == "Death1")
         {
+            Dictionary<string, object> d = new Dictionary<string, object>();
+            d.Add("Check Point", "Moments - Tutorial");
+            GameManagerGeneric.Instance.SaveInfo(d);
+            SceneManager.LoadScene("Game Over");
+        }
+        else if (c.gameObject.name == "Death2")
+        {
+            Dictionary<string, object> d = new Dictionary<string, object>();
+            d.Add("Check Point", "Memories - Tutorial");
+            GameManagerGeneric.Instance.SaveInfo(d);
             SceneManager.LoadScene("Game Over");
         }
     }

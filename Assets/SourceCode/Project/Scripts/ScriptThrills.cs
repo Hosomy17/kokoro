@@ -51,7 +51,12 @@ public class ScriptThrills : ScriptGeneric
         hp.fillAmount = total;
 
         if(hp.fillAmount <= 0)
+        {
+            Dictionary<string, object> d = new Dictionary<string, object>();
+            d.Add("Check Point", "Thrills - Tutorial");
+            GameManagerGeneric.Instance.SaveInfo(d);
             SceneManager.LoadScene("Game Over");
+        }
     }
 
     public void SpawnSaw()

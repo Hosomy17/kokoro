@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class ScriptObeesessions : ScriptGeneric
 {
@@ -138,6 +139,9 @@ public class ScriptObeesessions : ScriptGeneric
             SceneManager.LoadScene("Memories - Tutorial");
         else
         {
+            Dictionary<string, object> d = new Dictionary<string, object>();
+            d.Add("Check Point", "Obeesessions - Tutorial");
+            GameManagerGeneric.Instance.SaveInfo(d);
             SceneManager.LoadScene("Game Over");
         }
     }

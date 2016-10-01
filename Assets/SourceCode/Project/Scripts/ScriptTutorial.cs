@@ -7,6 +7,9 @@ public class ScriptTutorial : MonoBehaviour
 
     public string scene;
     public float time;
+    public float timeMusic;
+
+    private AudioSource music;
 
     private AsyncOperation asyncOpe;
 
@@ -14,13 +17,29 @@ public class ScriptTutorial : MonoBehaviour
     {
         asyncOpe = SceneManager.LoadSceneAsync(scene);
         asyncOpe.allowSceneActivation = false;
-        Invoke("StartScene",time);
+
+        GameObject sound = GameObject.Find("Kokoro Music");
+        if(sound == null)
+        {
+            sound = Resources.Load("Kokoro Music") as GameObject;
+            sound = Instantiate(sound);
+            sound.name = "Kokoro Music";
+            DontDestroyOnLoad(sound);
+
+            music = sound.GetComponent<AudioSource>();
+            music.time = timeMusic;
+            music.Play();
+        }
+        
+
+        Invoke("StartScene", time);
 	}
     void Update()
     {
     }
     private void StartScene()
     {
+        
         asyncOpe.allowSceneActivation = true;
     }
 }
