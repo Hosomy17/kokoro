@@ -30,6 +30,15 @@ public class ScriptTutorial : MonoBehaviour
             music.time = timeMusic;
             music.Play();
         }
+        else
+        {
+            music = sound.GetComponent<AudioSource>();
+            if(!music.isPlaying)
+            {
+                music.time = timeMusic;
+                music.Play();
+            }
+        }
         
 
         Invoke("StartScene", time);

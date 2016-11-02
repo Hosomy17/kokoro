@@ -17,7 +17,8 @@ public class ScriptLies : ScriptGeneric
 
     private GameObject sound;
     private AudioSource music;
-	void Start ()
+
+	void Start()
     {
         endChapter = true;
         sound = GameObject.Find("Kokoro Music");

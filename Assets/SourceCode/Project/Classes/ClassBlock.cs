@@ -8,7 +8,7 @@ public class ClassBlock : ClassGeneric
     {
         try
         {
-            GameObject.Find("GameManager").GetComponent<ScriptObeesessions>().CollisionBlock(gameObject.name);
+            GameObject.Find("GameManager").GetComponent<ScriptObesessions>().CollisionBlock(gameObject.name);
         }
         catch (Exception e)
         {

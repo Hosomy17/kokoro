@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-public class ScriptObeesessions : ScriptGeneric
+public class ScriptObesessions : ScriptGeneric
 {
     public GameObject arrows;
     public GameObject blocks;
@@ -140,7 +140,7 @@ public class ScriptObeesessions : ScriptGeneric
         else
         {
             Dictionary<string, object> d = new Dictionary<string, object>();
-            d.Add("Check Point", "Obeesessions - Tutorial");
+            d.Add("Check Point", "Obesessions - Tutorial");
             GameManagerGeneric.Instance.SaveInfo(d);
             SceneManager.LoadScene("Game Over");
         }

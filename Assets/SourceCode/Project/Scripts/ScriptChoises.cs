@@ -28,22 +28,22 @@ public class ScriptChoises : ScriptGeneric
         Destroy(points);
         points = obj;
 
-        Invoke("SpawnSaw",9f);
+        Invoke("SpawnSaw", 4f);
         Invoke("SpawnSun", 3f);
-        Invoke("SpawnSun", 10f);
+        Invoke("SpawnSun", 5f);
 
-        Invoke("Zoom", 40.5f);
-        Invoke("SpawnSaw", 40f);
-        Invoke("SpawnSaw", 40.25f);
-        Invoke("SpawnSaw", 40.5f);
-        Invoke("SpawnSaw", 40.75f);
-        Invoke("SpawnSaw", 41f);
+        Invoke("Zoom", 35.5f);
+        Invoke("SpawnSaw", 35f);
+        Invoke("SpawnSaw", 35.25f);
+        Invoke("SpawnSaw", 35.5f);
+        Invoke("SpawnSaw", 35.75f);
+        Invoke("SpawnSaw", 36f);
 
-        Invoke("SpawnSaw", 43f);
-        Invoke("SpawnSaw", 43.25f);
-        Invoke("SpawnSaw", 43.5f);
-        Invoke("SpawnSaw", 43.75f);
-        Invoke("SpawnSaw", 44f);
+        Invoke("SpawnSaw", 38f);
+        Invoke("SpawnSaw", 38.25f);
+        Invoke("SpawnSaw", 38.5f);
+        Invoke("SpawnSaw", 38.75f);
+        Invoke("SpawnSaw", 39f);
 
         music = sound.GetComponent<AudioSource>();
     }
